@@ -8,6 +8,10 @@ Sends a Slack notification. Simple as that.
 
 ![Slack message](slack.png "Slack message")
 
+This GitHub action is part of a list of Actions that are located in an other repo. Feel free to check it out : https://github.com/Ilshidur/actions.
+
+<hr/>
+
 ## Usage
 
 ```
