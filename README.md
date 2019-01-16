@@ -39,3 +39,10 @@ The argument is the message to display in the Slack notification.
 
 * **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks)
 * That's all.
+
+<hr/>
+
+<p align="center">
+  Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action !<br/>
+  <a href="https://github.com/Ilshidur/action-discord/issues/new">Your feedback is appreciated</a>
+</p>
