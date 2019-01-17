@@ -14,7 +14,7 @@ This GitHub action is part of a list of Actions that are located in an other rep
 
 ## Usage
 
-```
+```hcl
 action "Slack notification" {
   uses = "Ilshidur/actions/slack@master"
   secrets = ["SLACK_WEBHOOK"]
