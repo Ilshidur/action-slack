@@ -3,8 +3,6 @@ workflow "Notification on push" {
   resolves = [
     "Filters for GitHub Actions",
     "Slack notification",
-    "Discord notificaction",
-    "Discord notificaction CUSTOM",
   ]
 }
 
