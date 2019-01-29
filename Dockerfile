@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:10.15.0
+FROM mhart/alpine-node:10.15.1
 
 LABEL "com.github.actions.name"="GitHub Action for Slack"
 LABEL "com.github.actions.description"="Outputs a message to Slack."
