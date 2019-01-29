@@ -39,7 +39,8 @@ The argument is the message to display in the Slack notification.
 
 ### Secrets
 
-* **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks)
+* **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
+* **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook.
 * That's all.
 
 <hr/>

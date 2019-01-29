@@ -1,0 +1,28 @@
+{
+  "name": "action-slack",
+  "version": "1.1.0",
+  "description": "GitHub Action that sends a Slack notification.",
+  "private": true,
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ilshidur/actions.git"
+  },
+  "keywords": [
+    "slack",
+    "github",
+    "action"
+  ],
+  "author": "Ilshidur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ilshidur/actions/issues"
+  },
+  "homepage": "https://github.com/Ilshidur/actions#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "yargs": "^12.0.5"
+  }
+}
