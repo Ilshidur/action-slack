@@ -37,10 +37,13 @@ The argument is the message to display in the Slack notification.
 * `args = "Hello, beautiful ! I ran a GitHub Actions for you <3"`
 * `args = "I showed you my commit. Please respond."`
 
+### Environment variables
+
+* **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook.
+
 ### Secrets
 
 * **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
-* **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook.
 * That's all.
 
 <hr/>
