@@ -14,11 +14,13 @@ const payload = {
 const url = process.env.SLACK_WEBHOOK;
 
 (async () => {
+    console.log('Sending message ...');
     await axios.post(url, querystring.stringify({ payload: JSON.stringify(payload) }), {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     });
+    console.log('Message sent ! Shutting down ...');
     process.exit(0);
 })()
     .catch((err) => {
