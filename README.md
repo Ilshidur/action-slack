@@ -30,6 +30,8 @@ action "Slack notification" {
 
 The argument is the message to display in the Slack notification.
 
+*Note :* be careful to properly [format your messages for Slack](https://api.slack.com/docs/message-formatting).
+
 #### Examples
 
 * `args = "Hello, beautiful ! I ran a GitHub Actions for you <3"`
