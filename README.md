@@ -46,7 +46,7 @@ The argument is the message to display in the Slack notification.
 * **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
 * That's all.
 
-### Alternatives
+## Alternatives
 
 Because open source if about everyone :
 
