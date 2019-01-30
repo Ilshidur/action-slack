@@ -1,4 +1,4 @@
-# Slack for GitHub Actions
+# 🚀 Slack for GitHub Actions
 
 Sends a Slack notification. Simple as that.
 
