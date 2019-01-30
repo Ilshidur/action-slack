@@ -46,6 +46,13 @@ The argument is the message to display in the Slack notification.
 * **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
 * That's all.
 
+### Alternatives
+
+Because open source if about everyone :
+
+https://github.com/marketplace/actions/post-slack-message <br/>
+![](https://img.shields.io/github/stars/pullreminders/slack-action.svg?label=Stars&style=social)
+
 <hr/>
 
 <p align="center">
