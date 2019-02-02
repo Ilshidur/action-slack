@@ -30,6 +30,10 @@ action "Slack notification" {
 
 The argument is the message to display in the Slack notification.
 
+**Environment variables** can be interpolated in the message using brackets (`{{` and `}}`) :
+
+e.g.: `Action called : {{ GITHUB_ACTION }}`
+
 *Note :* be careful to properly [format your messages for Slack](https://api.slack.com/docs/message-formatting).
 
 #### Examples
