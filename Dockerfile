@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="red"
 LABEL "repository"="https://github.com/Ilshidur/actions"
 LABEL "homepage"="https://github.com/Ilshidur/action-slack"
 LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
-LABEL "version"="1.2.0"
+LABEL "version"="1.2.1"
 
 ADD entrypoint.js package.json package-lock.json /
 RUN npm ci
