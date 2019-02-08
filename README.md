@@ -52,7 +52,7 @@ e.g.: `Action called : {{ GITHUB_ACTION }}`
 
 ## Alternatives
 
-Because open source if about everyone :
+Because open source is about everyone :
 
 https://github.com/marketplace/actions/post-slack-message <br/>
 ![](https://img.shields.io/github/stars/pullreminders/slack-action.svg?label=Stars&style=social)
