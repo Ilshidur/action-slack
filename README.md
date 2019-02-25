@@ -44,6 +44,7 @@ e.g.: `Action called : {{ GITHUB_ACTION }}`
 ### Environment variables
 
 * **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook.
+* **`SLACK_OVERRIDE_MESSAGE`** *(optional boolean, defaults to nothing)* : set to `true` to remove the first line of the message (`Ilshidur/nicolas-coutin.fr/Deployment triggered by Ilshidur (push) :`) Any other value will override the message set in the *args* of this Action.
 
 ### Secrets
 
