@@ -38,7 +38,7 @@ e.g.: `Action called : {{ GITHUB_ACTION }}`
 
 #### Examples
 
-* `args = "Hello, beautiful ! I ran a GitHub Actions for you <3"`
+* `args = "Hello, beautiful ! I ran a GitHub Action for you <3"`
 * `args = "I showed you my commit. Please respond."`
 
 ### Environment variables
