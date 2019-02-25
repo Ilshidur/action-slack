@@ -10,8 +10,9 @@ LABEL "homepage"="https://github.com/Ilshidur/action-slack"
 LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
 LABEL "version"="1.2.1"
 
-ADD entrypoint.js package.json package-lock.json /
+ADD package.json package-lock.json /
 RUN npm ci
+ADD entrypoint.js /
 RUN chmod +x /entrypoint.js
 
 ENTRYPOINT ["node", "/entrypoint.js"]
