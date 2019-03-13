@@ -2,11 +2,16 @@ const axios = require('axios');
 const _ = require('lodash');
 const querystring = require('querystring');
 const { argv } = require('yargs');
+const fs = require("fs");
+
+const EVENT_PAYLOAD = JSON.parse(
+  fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")
+);
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
 const args = argv._.join(' ');
-const message = _.template(args)(process.env);
+const message = _.template(args)({ ...process.env, EVENT_PAYLOAD });
 
 let fullMessage = `${process.env.GITHUB_REPOSITORY}/${process.env.GITHUB_WORKFLOW} triggered by ${process.env.GITHUB_ACTOR} (${process.env.GITHUB_EVENT_NAME}) :\n${message}`;
 
