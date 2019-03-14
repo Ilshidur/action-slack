@@ -19,7 +19,7 @@ if (process.env.SLACK_OVERRIDE_MESSAGE) {
   if (process.env.SLACK_OVERRIDE_MESSAGE === true || process.env.SLACK_OVERRIDE_MESSAGE === 'true') {
     fullMessage = message;
   } else {
-    fullMessage = _.template(process.env.SLACK_OVERRIDE_MESSAGE)(process.env);
+    fullMessage = _.template(process.env.SLACK_OVERRIDE_MESSAGE)({ ...process.env, EVENT_PAYLOAD });
   }
 }
 
