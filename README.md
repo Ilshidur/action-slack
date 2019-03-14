@@ -36,6 +36,12 @@ e.g.: `Action called : {{ GITHUB_ACTION }}`
 
 *Note :* be careful to properly [format your messages for Slack](https://api.slack.com/docs/message-formatting).
 
+**Event Payload** data can also be interpolated in the message using brackets (`{{` and `}}`) with the `EVENT_PAYLOAD` variable.
+
+e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}`
+
+> See the [event types](https://developer.github.com/v3/activity/events/types/) for valid payload information 
+
 #### Examples
 
 * `args = "Hello, beautiful ! I ran a GitHub Action for you <3"`
