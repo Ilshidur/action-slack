@@ -64,7 +64,7 @@ Because open source is about everyone :
 https://github.com/marketplace/actions/post-slack-message <br/>
 ![](https://img.shields.io/github/stars/pullreminders/slack-action.svg?label=Stars&style=social)
 
-https://github.com/marketplace/actions/slack-notification <br/>
+https://github.com/marketplace/actions/slack-notify <br/>
 ![](https://img.shields.io/github/stars/rtCamp/action-slack-notify.svg?label=Stars&style=social)
 
 <hr/>
