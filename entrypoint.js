@@ -1,11 +1,33 @@
 const axios = require('axios');
+const fs = require('fs');
 const _ = require('lodash');
 const querystring = require('querystring');
 const { argv } = require('yargs');
-const fs = require("fs");
+
+const REQUIRED_ENV_VARS = [
+  'GITHUB_EVENT_PATH',
+  'GITHUB_REPOSITORY',
+  'GITHUB_WORKFLOW',
+  'GITHUB_ACTOR',
+  'GITHUB_EVENT_NAME',
+  'GITHUB_ACTION',
+  'SLACK_WEBHOOK',
+];
+
+REQUIRED_ENV_VARS.forEach(env => {
+  if (!process.env[env] || !process.env[env].length) {
+    console.error(`Env var ${env} is not defined. Maybe try to set it if you are running the script manually.`);
+    process.exit(1);
+  }
+});
+
+if (argv._.length === 0) {
+  console.error(`Cannot send empty message. Please fill the 'args' field of the GitHub Action.`);
+  process.exit(1);
+}
 
 const EVENT_PAYLOAD = JSON.parse(
-  fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")
+  fs.readFileSync(process.env.GITHUB_EVENT_PATH, 'utf8')
 );
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
