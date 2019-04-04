@@ -24,7 +24,7 @@ action "Slack notification" {
 
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
-`uses = "Ilshidur/action-slack@e820f54"` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
+`uses = "Ilshidur/action-slack@c2f5329"` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
 
 ### Arguments
 
