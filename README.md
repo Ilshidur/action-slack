@@ -57,6 +57,10 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 * **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
 * That's all.
 
+## Debugging / testing / development
+
+Developers, all you need is in the [DEVELOPMENT.md](DEVELOPMENT.md) file.
+
 ## Alternatives
 
 Because open source is about everyone :

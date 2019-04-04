@@ -11,7 +11,7 @@ LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
 LABEL "version"="1.4.0"
 
 ADD package.json package-lock.json /
-RUN npm ci
+RUN npm ci --production
 ADD entrypoint.js /
 RUN chmod +x /entrypoint.js
 
