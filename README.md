@@ -75,5 +75,5 @@ https://github.com/marketplace/actions/slack-notify <br/>
 
 <p align="center">
   Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action !<br/>
-  <a href="https://github.com/Ilshidur/action-discord/issues/new">Your feedback is appreciated</a>
+  <a href="https://github.com/Ilshidur/action-slack/issues/new">Your feedback is appreciated</a>
 </p>
