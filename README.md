@@ -71,6 +71,9 @@ https://github.com/marketplace/actions/post-slack-message <br/>
 https://github.com/marketplace/actions/slack-notify <br/>
 ![](https://img.shields.io/github/stars/rtCamp/action-slack-notify.svg?label=Stars&style=social)
 
+https://github.com/marketplace/actions/slack-bot-action <br/>
+![](https://img.shields.io/github/stars/krider2010/slack-bot-action.svg?label=Stars&style=social)
+
 <hr/>
 
 <p align="center">
