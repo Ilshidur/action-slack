@@ -27,6 +27,6 @@
     "yargs": "13.2.2"
   },
   "devDependencies": {
-    "dotenv": "7.0.0"
+    "dotenv": "8.0.0"
   }
 }
