@@ -24,7 +24,7 @@
   "dependencies": {
     "axios": "0.18.0",
     "lodash": "4.17.11",
-    "yargs": "13.2.2"
+    "yargs": "13.2.4"
   },
   "devDependencies": {
     "dotenv": "8.0.0"
