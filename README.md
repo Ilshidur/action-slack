@@ -20,6 +20,7 @@ This GitHub action is part of a list of Actions that are located in an other rep
 - name: Slack notification
   env:
     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+    SLACK_USERNAME: ThisIsMyUsername # Optional.
     SLACK_CHANNEL: general # Optional.
     SLACK_OVERRIDE_MESSAGE: 'Custom message' # Optional.
   uses: Ilshidur/action-slack@master
@@ -39,7 +40,7 @@ action "Slack notification" {
 
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
-`Ilshidur/action-slack@c2f5329` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
+`Ilshidur/action-slack@c2a4dc6` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
 
 ### Arguments
 
@@ -64,7 +65,8 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 
 ### Environment variables
 
-* **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook.
+* **`SLACK_USERNAME`** *(optional)* : overrides the default username. Defaults to the name of the Action.
+* **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook. If not set, the message will be sent to the channel associated to the webhook.
 * **`SLACK_OVERRIDE_MESSAGE`** *(optional boolean, defaults to nothing)* : set to `true` to remove the first line of the message (`<author>/<project>/Deployment triggered by <author> (push) :`). Any other value will override the message set in the *args* of this Action.
 
 ### Secrets
