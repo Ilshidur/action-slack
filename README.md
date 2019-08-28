@@ -1,5 +1,7 @@
 # 🚀 Slack for GitHub Actions
 
+[![Build Status][build-badge]][build-url]
+
 Sends a Slack notification. Simple as that.
 
 ![GitHub Action](action.png "GitHub Action")
@@ -97,3 +99,6 @@ https://github.com/marketplace/actions/slack-bot-action <br/>
   Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action !<br/>
   <a href="https://github.com/Ilshidur/action-slack/issues/new">Your feedback is appreciated</a>
 </p>
+
+[build-badge]: https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FIlshidur%2Faction-slack%2Fbadge&style=flat
+[build-url]: https://actions-badge.atrox.dev/Ilshidur/action-slack/goto
