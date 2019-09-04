@@ -93,6 +93,9 @@ https://github.com/marketplace/actions/slack-notify <br/>
 https://github.com/marketplace/actions/slack-bot-action <br/>
 ![](https://img.shields.io/github/stars/krider2010/slack-bot-action.svg?label=Stars&style=social)
 
+https://github.com/marketplace/actions/slatify <br/>
+![](https://img.shields.io/github/stars/homoluctus/slatify.svg?label=Stars&style=social)
+
 <hr/>
 
 <p align="center">
