@@ -8,7 +8,7 @@ LABEL "com.github.actions.color"="red"
 LABEL "repository"="https://github.com/Ilshidur/actions"
 LABEL "homepage"="https://github.com/Ilshidur/action-slack"
 LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
-LABEL "version"="1.6.0"
+LABEL "version"="1.6.1"
 
 ADD package.json package-lock.json /
 RUN npm ci --production
