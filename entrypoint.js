@@ -69,7 +69,7 @@ const url = process.env.SLACK_WEBHOOK;
   console.log("Sending message ...");
   await axios.post(
     url,
-    querystring.stringify({ payload: JSON.stringify(payload).replace(new RegExp('\\\\n', 'g'), '\\n') }),
+    querystring.stringify({ payload: JSON.stringify(payload).replace(/\\\\n/gm, '\\n') }),
     {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
