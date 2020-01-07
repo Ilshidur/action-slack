@@ -30,16 +30,6 @@ This GitHub action is part of a list of Actions that are located in an other rep
     args: 'A new commit has been pushed.'
 ```
 
-### (legacy) HCL syntax
-
-```hcl
-action "Slack notification" {
-  uses = "Ilshidur/action-slack@master"
-  secrets = ["SLACK_WEBHOOK"]
-  args = "A new commit has been pushed."
-}
-```
-
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
 `Ilshidur/action-slack@9273a03` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
