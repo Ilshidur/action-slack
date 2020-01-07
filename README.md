@@ -55,14 +55,10 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 
 ### Environment variables
 
+* **`SLACK_WEBHOOK`** **(required)**: the Slack webhook URL (see https://api.slack.com/incoming-webhooks).
 * **`SLACK_USERNAME`** *(optional)* : overrides the default username. Defaults to the name of the Action.
 * **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook. If not set, the message will be sent to the channel associated to the webhook.
 * **`SLACK_OVERRIDE_MESSAGE`** *(optional boolean, defaults to nothing)* : set to `true` to remove the first line of the message (`<author>/<project>/Deployment triggered by <author> (push) :`). Any other value will override the message set in the *args* of this Action.
-
-### Secrets
-
-* **`SLACK_WEBHOOK`**: the Slack webhook URL (**required**, see https://api.slack.com/incoming-webhooks).
-* That's all.
 
 ## Debugging / testing / development
 
