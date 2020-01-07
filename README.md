@@ -16,8 +16,6 @@ This GitHub action is part of a list of Actions that are located in an other rep
 
 ## Usage
 
-### New YML syntax
-
 ```yaml
 - name: Slack notification
   env:
