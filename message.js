@@ -5,7 +5,6 @@
 import { selectAvatar, getMessage } from "./handlers.js";
 
 const {
-  SLACK_AVATAR,
   SLACK_USERNAME,
   SLACK_CHANNEL,
 } = process.env;
@@ -28,7 +27,7 @@ const messageSingleton = (() => {
       also can use use sender, or repository image.
       defaults to webhook slack app;
     */
-    if (SLACK_AVATAR) message.icon_url = selectAvatar();
+    if (selectAvatar()) message.icon_url = selectAvatar();
 
     return message;
   }
