@@ -9,11 +9,34 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [13.x]
     steps:
-    - name: Slack notification
+      - uses: actions/checkout@v1
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install packages and check syntax
+        run: |
+          yarn install
+          yarn lint
+
+    - name: Slack notification FAILED
+      uses: itsmelion/action-slack@2.0.2
+      if: failure()
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-      uses: Ilshidur/action-slack@master
+        SLACK_AVATAR: sender # optional: repo, sender or Image URL
       with:
-        args: 'A new commit has been pushed to Ilshidur/action-slack.'
+        args: "Lint *FAILED*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n Dude, your code sucks.."
+
+    - name: Slack notification SUCCESS
+      uses: itsmelion/action-slack@2.0.2
+      if: success()
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_AVATAR: repository # optional: repository, sender or Image URL
+      with:
+        args: "Lint *SUCCESS!*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n One more step to a glorious future."
