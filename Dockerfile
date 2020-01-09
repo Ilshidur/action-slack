@@ -8,10 +8,10 @@ LABEL "com.github.actions.color"="red"
 LABEL "repository"="https://github.com/Ilshidur/actions"
 LABEL "homepage"="https://github.com/Ilshidur/action-slack"
 LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
-LABEL "version"="1.6.2"
+LABEL "version"="2.0.0"
 
-ADD package.json package-lock.json /
-RUN npm ci --production
+ADD package.json yarn.lock /
+RUN yarn --production
 ADD entrypoint.js /
 RUN chmod +x /entrypoint.js
 
