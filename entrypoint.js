@@ -2,6 +2,7 @@ const axios = require('axios');
 const message = require('./message.js');
 
 const REQUIRED_ENV_VARS = [
+  "GITHUB_EVENT_PATH",
   "SLACK_WEBHOOK",
 ];
 
