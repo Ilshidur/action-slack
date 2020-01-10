@@ -2,18 +2,22 @@
   @description
   Message payload to be sent with Slack webhook
 */
-import { selectAvatar, getMessage } from "./handlers.js";
+import { selectAvatar, getMessage, parsePayload } from "./handlers.js";
 
 const {
   SLACK_USERNAME,
   SLACK_CHANNEL,
+  SLACK_CUSTOM_PAYLOAD,
 } = process.env;
 
 const messageSingleton = (() => {
   let instance;
 
   function createInstance() {
+    if (SLACK_CUSTOM_PAYLOAD) return parsePayload();
+
     const message = {};
+
     message.text = getMessage(); // Args || DEFAULT_MESSAGE
 
     // override username

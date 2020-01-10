@@ -59,6 +59,7 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 * **`SLACK_USERNAME`** *(optional)* : overrides username. Defaults to the Slack webhook bot name.
 * **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook. If not set, the message will be sent to the channel associated to the webhook.
 * **`SLACK_AVATAR`** *(optional)* : overrides the message avatar. Can be (repository, sender or an URL) If not set, the avatar of the slack webhook's bot picture.
+* **`SLACK_CUSTOM_PAYLOAD`** *(advanced)* : JSON string that sets full payload. instructions see [CUSTOM_PAYLOAD](CUSTOM_PAYLOAD.md)
 
 ## Debugging / testing / development
 
