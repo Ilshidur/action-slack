@@ -10,13 +10,12 @@ LABEL "homepage"="https://github.com/Ilshidur/action-slack"
 LABEL "maintainer"="Ilshidur <ilshidur@gmail.com>"
 LABEL "version"="2.0.0"
 
-WORKDIR /action-slack
-ADD package.json yarn.lock ./
+ADD package.json yarn.lock /
 RUN yarn --production
-COPY . ./
+COPY . /
 RUN chmod +x ./index.js
 
 ARG GITHUB_EVENT_PATH=./event-example.json
 ENV GITHUB_EVENT_PATH $GITHUB_EVENT_PATH
 
-ENTRYPOINT ["node", "./"]
+ENTRYPOINT ["node", "/"]
