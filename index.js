@@ -1,6 +1,5 @@
-import axios from 'axios';
-
-import message from './message.js';
+const axios = require('axios');
+const message = require('./message.js');
 
 const REQUIRED_ENV_VARS = [
   "SLACK_WEBHOOK",

@@ -2,7 +2,7 @@
   @description
   Message payload to be sent with Slack webhook
 */
-import { selectAvatar, getMessage, parsePayload } from "./handlers.js";
+const { selectAvatar, getMessage, parsePayload } = require("./handlers.js");
 
 const {
   SLACK_USERNAME,
@@ -44,4 +44,4 @@ const messageSingleton = (() => {
   };
 })();
 
-export default messageSingleton;
+module.exports = messageSingleton;

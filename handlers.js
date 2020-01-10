@@ -1,9 +1,9 @@
-import fs from 'fs';
-import _ from 'lodash';
-import yargs from 'yargs';
+const fs = require('fs');
+const _ = require('lodash');
+const yargs = require('yargs');
+const args = yargs.argv._;
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
-const args = yargs.argv._;
 
 const {
   SLACK_AVATAR,
@@ -14,14 +14,12 @@ const {
   GITHUB_REPOSITORY
 } = process.env;
 
-const EVENT_PAYLOAD = JSON.parse(
-  fs.readFileSync(GITHUB_EVENT_PATH, "utf8")
-);
+const EVENT_PAYLOAD = JSON.parse(fs.readFileSync(GITHUB_EVENT_PATH, "utf8"));
 
 const replaceMustaches = data => _.template(data)({ ...process.env, EVENT_PAYLOAD })
 
 // Override Slack message
-export const getMessage = () => {
+exports.getMessage = () => {
   const DEFAULT_MESSAGE = `@${GITHUB_ACTOR} (${GITHUB_EVENT_NAME}) at ${GITHUB_REPOSITORY}`;
 
   // If any arguments provided, parse moustaches on template string:
@@ -31,14 +29,14 @@ export const getMessage = () => {
 }
 
 // Custom slack payload
-export const parsePayload = () => JSON.parse(replaceMustaches(SLACK_CUSTOM_PAYLOAD));
+exports.parsePayload = () => JSON.parse(replaceMustaches(SLACK_CUSTOM_PAYLOAD));
 
 
 // overrides default avatar
-export const selectAvatar = () => {
+exports.selectAvatar = () => {
   switch (SLACK_AVATAR) {
     case 'sender': return _.get(EVENT_PAYLOAD, 'sender.avatar_url') || false;
     case 'repository': return _.get(EVENT_PAYLOAD, 'owner.avatar_url') || false
     default: return SLACK_AVATAR || false;
   }
-}
+};
