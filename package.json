@@ -3,9 +3,9 @@
   "version": "2.0.0",
   "description": "GitHub Action that sends a Slack notification.",
   "private": true,
-  "main": "./index.js",
+  "main": "./entrypoint.js",
   "scripts": {
-    "start": "node -r dotenv/config ./ \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
+    "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
     "lint": "eslint --ext .js ./"
   },
   "repository": {

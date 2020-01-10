@@ -13,9 +13,9 @@ LABEL "version"="2.0.0"
 ADD package.json yarn.lock /
 RUN yarn --production
 COPY . /
-RUN chmod +x ./index.js
+RUN chmod +x /entrypoint.js
 
 ARG GITHUB_EVENT_PATH=./event-example.json
 ENV GITHUB_EVENT_PATH $GITHUB_EVENT_PATH
 
-ENTRYPOINT ["node", "/"]
+ENTRYPOINT ["node", "/entrypoint.js"]
