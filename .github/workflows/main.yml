@@ -22,21 +22,19 @@ jobs:
         run: |
           yarn install
           yarn lint
-
-    - name: Slack notification FAILED
-      uses: itsmelion/action-slack@2.0.2
-      if: failure()
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_AVATAR: sender # optional: repo, sender or Image URL
-      with:
-        args: "Lint *FAILED*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n Dude, your code sucks.."
-
-    - name: Slack notification SUCCESS
-      uses: itsmelion/action-slack@2.0.2
-      if: success()
-      env:
-        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        SLACK_AVATAR: repository # optional: repository, sender or Image URL
-      with:
-        args: "Lint *SUCCESS!*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n One more step to a glorious future."
+      - name: Slack notification FAILED
+        uses: itsmelion/action-slack@2.0.2
+        if: failure()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_AVATAR: sender # optional: repo, sender or Image URL
+        with:
+          args: "Lint *FAILED*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n Dude, your code sucks.."
+      - name: Slack notification SUCCESS
+        uses: itsmelion/action-slack@2.0.2
+        if: success()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_AVATAR: repository # optional: repository, sender or Image URL
+        with:
+          args: "Lint *SUCCESS!*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n One more step to a glorious future."
