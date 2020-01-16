@@ -11,30 +11,33 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [13.x]
+        node-version: [12.x]
     steps:
       - uses: actions/checkout@v1
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install packages and check syntax
+
+      - name: Check syntax
         run: |
           yarn install
           yarn lint
+
       - name: Slack notification FAILED
-        uses: itsmelion/action-slack@2.0.2
+        uses: Ilshidur/action-slack@master
         if: failure()
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_AVATAR: sender # optional: repo, sender or Image URL
+          SLACK_AVATAR: sender # optional: repository, sender or ImageURL
         with:
-          args: "Lint *FAILED*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n Dude, your code sucks.."
+          args: "Lint checks *FAILED* \nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
+
       - name: Slack notification SUCCESS
-        uses: itsmelion/action-slack@2.0.2
+        uses: Ilshidur/action-slack@master
         if: success()
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_AVATAR: repository # optional: repository, sender or Image URL
         with:
-          args: "Lint *SUCCESS!*\n {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}\n One more step to a glorious future."
+          args: "Lint checks *SUCCESSFUL!* \nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
