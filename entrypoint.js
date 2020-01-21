@@ -3,6 +3,11 @@ const message = require('./message.js');
 
 const REQUIRED_ENV_VARS = [
   "GITHUB_EVENT_PATH",
+  "GITHUB_REPOSITORY",
+  "GITHUB_WORKFLOW",
+  "GITHUB_ACTOR",
+  "GITHUB_EVENT_NAME",
+  "GITHUB_ACTION",
   "SLACK_WEBHOOK",
 ];
 
