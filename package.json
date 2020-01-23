@@ -1,10 +1,12 @@
 {
   "name": "action-slack",
-  "version": "1.6.2",
+  "version": "2.0.0",
   "description": "GitHub Action that sends a Slack notification.",
   "private": true,
+  "main": "./entrypoint.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
+    "lint": "eslint --ext .js ./"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "yargs": "15.1.0"
   },
   "devDependencies": {
-    "dotenv": "8.2.0"
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0"
   }
 }
