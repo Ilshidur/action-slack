@@ -65,6 +65,12 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 
 Developers, all you need is in the [DEVELOPMENT.md](DEVELOPMENT.md) file.
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END --> 
+
 ## Alternatives
 
 Because open source is about everyone :
