@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "itsmelion",
+      "name": "Christhopher Lion",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12537491?v=4",
+      "profile": "https://lion.alia.ml",
+      "contributions": [
+        "code",
+        "ideas",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "action-slack",
+  "projectOwner": "Ilshidur",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
