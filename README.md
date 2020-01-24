@@ -1,5 +1,9 @@
 # 🚀 Slack for GitHub Actions
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 [![Build Status][build-badge]][build-url]
 
 Sends a Slack notification. Simple as that.
@@ -67,9 +71,18 @@ Developers, all you need is in the [DEVELOPMENT.md](DEVELOPMENT.md) file.
 
 ## Contributors
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors)
-<!-- ALL-CONTRIBUTORS-BADGE:END --> 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://lion.alia.ml"><img src="https://avatars1.githubusercontent.com/u/12537491?v=4" width="100px;" alt=""/><br /><sub><b>Christhopher Lion</b></sub></a><br /><a href="https://github.com/Ilshidur/action-slack/commits?author=itsmelion" title="Code">💻</a> <a href="#ideas-itsmelion" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/Ilshidur/action-slack/commits?author=itsmelion" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Alternatives
 
