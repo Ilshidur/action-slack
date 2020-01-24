@@ -11,8 +11,8 @@ By installing and running this Action manually, you'll be able to control the en
 
 ## Installation
 
-* Copy `.env.dist` to `.env` and set **all** the environment variables
-* Run `npm ci`
+* Copy `.env.dist` to `.env` and set **all** the environment variables.
+* Run `yarn`.
 
 ## Development
 
