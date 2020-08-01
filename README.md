@@ -111,6 +111,9 @@ https://github.com/marketplace/actions/slatify <br/>
 https://github.com/marketplace/actions/slack-notify-build <br/>
 ![](https://img.shields.io/github/stars/voxmedia/github-action-slack-notify-build.svg?label=Stars&style=social)
 
+https://github.com/marketplace/actions/action-slack <br/>
+![](https://img.shields.io/github/stars/8398a7/action-slack.svg?label=Stars&style=social)
+
 <hr/>
 
 <p align="center">
