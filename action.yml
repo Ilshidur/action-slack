@@ -12,10 +12,8 @@ inputs:
   # slack_username:
   # slack_channel:
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.args }}
+  using: 'node12'
+  main: 'dist/index.js'
 branding:
   icon: hash
   color: red

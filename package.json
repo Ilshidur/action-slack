@@ -3,8 +3,10 @@
   "version": "2.0.0",
   "description": "GitHub Action that sends a Slack notification.",
   "private": true,
+  "type": "commonjs",
   "main": "./entrypoint.js",
   "scripts": {
+    "build": "ncc build ./entrypoint",
     "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
     "lint": "eslint --ext .js ./"
   },
@@ -29,7 +31,8 @@
     "yargs": "15.4.1"
   },
   "devDependencies": {
+    "@zeit/ncc": "0.22.3",
     "dotenv": "8.2.0",
-    "eslint": "6.8.0"
+    "eslint": "7.7.0"
   }
 }

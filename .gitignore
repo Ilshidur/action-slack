@@ -1,3 +1,5 @@
 node_modules
 .env
 .DS_Store
+dist/locales/*
+!dist/locales/en.json
