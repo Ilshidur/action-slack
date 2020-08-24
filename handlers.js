@@ -1,7 +1,7 @@
 const fs = require('fs');
 const _ = require('lodash');
-const yargs = require('yargs').detectLocale(false).locale('en');
-const args = yargs.argv._;
+const yargs = require('yargs');
+const args = yargs.locale('en').argv._;
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 

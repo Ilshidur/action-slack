@@ -6,7 +6,7 @@
   "type": "commonjs",
   "main": "./entrypoint.js",
   "scripts": {
-    "build": "ncc build ./entrypoint",
+    "build": "ncc build ./entrypoint -m",
     "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
     "lint": "eslint --ext .js ./"
   },
@@ -31,7 +31,7 @@
     "yargs": "15.4.1"
   },
   "devDependencies": {
-    "@zeit/ncc": "0.22.3",
+    "@vercel/ncc": "0.23.0",
     "dotenv": "8.2.0",
     "eslint": "7.7.0"
   }

@@ -1,4 +1,4 @@
-/*
+/**
   @description
   Message payload to be sent with Slack webhook
 */
