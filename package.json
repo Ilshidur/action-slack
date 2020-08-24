@@ -7,7 +7,7 @@
   "main": "./entrypoint.js",
   "scripts": {
     "build": "ncc build ./entrypoint -m",
-    "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
+    "start": "node -r dotenv/config ./entrypoint 'My message from {{GITHUB_REPOSITORY}}'",
     "lint": "eslint --ext .js ./"
   },
   "repository": {
