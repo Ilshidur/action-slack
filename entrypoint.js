@@ -7,23 +7,28 @@ const REQUIRED_ENV_VARS = [
   "SLACK_WEBHOOK",
 ];
 
-_.forEach(REQUIRED_ENV_VARS, env => {
-  if (_.isEmpty(process.env[env])) {
-    console.error(`Missing environment variable. ${env} is required.`);
+try {
+  _.forEach(REQUIRED_ENV_VARS, env => {
+    if (_.isEmpty(process.env[env])) {
+      process.exitCode = 1;
+      throw new Error(`Missing environment variable. ${env} is required.`);
+    }
+  });
+} catch (e) { console.error(e.message); }
 
-    return process.exit(1);
+
+(() => {
+  if (!process.exitCode) {
+    console.info("Sending message ...");
+
+    axios.post(process.env.SLACK_WEBHOOK, message.get())
+      .then(() => {
+        console.info("Message sent! Shutting down ...");
+        return process.exitCode = 0;
+      })
+      .catch((err) => {
+        console.error("Error: ", err.response ? err.response.data : err.message);
+        return process.exitCode = 1;
+      })
   }
-});
-
-console.info("Sending message ...");
-(() => axios
-  .post(process.env.SLACK_WEBHOOK, message.get())
-  .then(() => {
-    console.info("Message sent ! Shutting down ...");
-    return process.exitCode = 0;
-  })
-  .catch((err) => {
-    console.error("Message :", err.response ? err.response.data : err.message);
-    return process.exitCode = 1;
-  })
-)();
+})();
