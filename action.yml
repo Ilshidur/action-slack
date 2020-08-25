@@ -14,6 +14,8 @@ inputs:
 runs:
   using: 'node12'
   main: 'dist/index.js'
+  args:
+    - ${{ inputs.args }}
 branding:
   icon: hash
   color: red
