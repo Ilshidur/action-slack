@@ -12,10 +12,8 @@ inputs:
   # slack_username:
   # slack_channel:
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
-  args:
-    - ${{ inputs.args }}
+  using: node12
+  main: dist/index.js
 branding:
   icon: hash
   color: red

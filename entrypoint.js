@@ -1,5 +1,6 @@
 const axios = require('axios');
 const _ = require('lodash');
+const core = require('@actions/core');
 const message = require('./message');
 
 const REQUIRED_ENV_VARS = [
@@ -14,21 +15,22 @@ try {
       throw new Error(`Missing environment variable. ${env} is required.`);
     }
   });
-} catch (e) { console.error(e.message); }
+} catch (e) { core.setFailed(e.message); }
 
 
 (() => {
   if (!process.exitCode) {
-    console.info("Sending message ...");
+    core.info("Sending message ...");
 
     axios.post(process.env.SLACK_WEBHOOK, message.get())
       .then(() => {
-        console.info("Message sent! Shutting down ...");
-        return process.exitCode = 0;
+        process.exitCode = 0;
+        return core.info('Message sent! Shutting down ...');
       })
       .catch((err) => {
-        console.error("Error: ", err.response ? err.response.data : err.message);
-        return process.exitCode = 1;
+        process.exitCode = 1;
+        const errMessage = err.response ? err.response.data : err.message;
+        return core.setFailed(`Error: ${errMessage}`);
       })
   }
 })();

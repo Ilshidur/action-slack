@@ -1,6 +1,6 @@
 const fs = require('fs');
 const _ = require('lodash');
-const yargs = require('yargs');
+const core = require('@actions/core');
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
@@ -19,13 +19,13 @@ const replaceMustaches = data => _.template(data)({ ...process.env, EVENT_PAYLOA
 
 // Override Slack message
 exports.getMessage = () => {
-  const args = yargs.argv._;
+  const args = core.getInput('args');
   const DEFAULT_MESSAGE = `@${GITHUB_ACTOR} (${GITHUB_EVENT_NAME}) at ${GITHUB_REPOSITORY}`;
 
-  if (!args || _.isEmpty(args)) return DEFAULT_MESSAGE;
+  if (!args) return DEFAULT_MESSAGE;
 
   // If any arguments provided, parse moustaches on template string:
-  return replaceMustaches(_.join(args, " ")) || DEFAULT_MESSAGE;
+  return replaceMustaches(args) || DEFAULT_MESSAGE;
 }
 
 // Custom slack payload
