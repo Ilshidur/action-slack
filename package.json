@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "dotenv": "8.2.0",
-    "eslint": "6.8.0"
+    "eslint": "7.8.1"
   }
 }
