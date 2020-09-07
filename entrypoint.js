@@ -21,7 +21,8 @@ try {
 if (!process.exitCode) {
   core.info("Sending message ...");
 
-  axios.post(process.env.SLACK_WEBHOOK, message.get())
+  axios
+    .post(process.env.SLACK_WEBHOOK, message.get())
     .then(() => {
       process.exitCode = 0;
       return core.info('Message sent! Shutting down ...');
@@ -30,5 +31,5 @@ if (!process.exitCode) {
       process.exitCode = 1;
       const errMessage = err.response ? err.response.data : err.message;
       return core.setFailed(`Error: ${errMessage}`);
-    })
+    });
 }

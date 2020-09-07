@@ -1,5 +1,21 @@
 {
   "extends": [
     "config:base"
+  ],
+  "assignees": ["@Ilshidur"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "assignees": ["@Ilshidur"]
+  },
+  "packageRules": [
+    {
+      "depTypeList": [
+        "engines"
+      ],
+      "rangeStrategy": "auto"
+    }
   ]
 }
