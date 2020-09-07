@@ -18,19 +18,17 @@ try {
 } catch (e) { core.setFailed(e.message); }
 
 
-(() => {
-  if (!process.exitCode) {
-    core.info("Sending message ...");
+if (!process.exitCode) {
+  core.info("Sending message ...");
 
-    axios.post(process.env.SLACK_WEBHOOK, message.get())
-      .then(() => {
-        process.exitCode = 0;
-        return core.info('Message sent! Shutting down ...');
-      })
-      .catch((err) => {
-        process.exitCode = 1;
-        const errMessage = err.response ? err.response.data : err.message;
-        return core.setFailed(`Error: ${errMessage}`);
-      })
-  }
-})();
+  axios.post(process.env.SLACK_WEBHOOK, message.get())
+    .then(() => {
+      process.exitCode = 0;
+      return core.info('Message sent! Shutting down ...');
+    })
+    .catch((err) => {
+      process.exitCode = 1;
+      const errMessage = err.response ? err.response.data : err.message;
+      return core.setFailed(`Error: ${errMessage}`);
+    })
+}
