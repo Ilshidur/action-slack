@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/Ilshidur/actions#readme",
   "dependencies": {
-    "@actions/core": "1.2.4",
+    "@actions/core": "1.2.5",
     "axios": "0.20.0",
     "lodash": "4.17.20"
   },
