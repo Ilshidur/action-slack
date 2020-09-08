@@ -23,7 +23,7 @@ jobs:
         yarn lint
 
     - name: Slack notification FAILED
-      uses: Ilshidur/action-slack@v2
+      uses: Ilshidur/action-slack@2.0.2
       if: failure()
       env:
         SLACK_AVATAR: sender # optional: repository, sender or ImageURL
@@ -31,7 +31,7 @@ jobs:
         args: "Lint checks *FAILED* for {{GITHUB_REPOSITORY}}*\nYo {{GITHUB_ACTOR}} see why at <{{GITHUB_SERVER_URL}}/{{GITHUB_REPOSITORY}}/commit/{{GITHUB_SHA}}/checks|action logs>"
 
     - name: Slack notification SUCCESS
-      uses: Ilshidur/action-slack@v2
+      uses: Ilshidur/action-slack@2.0.2
       if: success()
       with:
         args: "Lint checks *SUCCESSFUL!*\nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
