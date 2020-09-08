@@ -8,8 +8,6 @@
 
 Sends a Slack notification. Simple as that.
 
-![GitHub Action](action.png "GitHub Action")
-
 *Appearance on Slack :*
 
 ![Slack message](slack.png "Slack message")
@@ -35,14 +33,15 @@ As this Action is containerized with Docker, [it can only run on Linux environme
     SLACK_USERNAME: ThisIsMyUsername # Optional. (defaults to webhook app)
     SLACK_CHANNEL: general # Optional. (defaults to webhook)
     SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
-  uses: Ilshidur/action-slack@master
+  uses: Ilshidur/action-slack@2.0.2
   with:
     args: 'A new commit has been pushed.' # Optional
 ```
 
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
-`Ilshidur/action-slack@fb92a78` (=> link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
+* Version : `uses: "Ilshidur/action-slack@2.0.2"` (&rarr; link to the releases list : https://github.com/Ilshidur/action-slack/releases)
+* Commit SHA-1 : `uses: "Ilshidur/action-slack@fb92a78"` (&rarr; link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
 
 ### Arguments
 
