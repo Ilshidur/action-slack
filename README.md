@@ -40,8 +40,8 @@ As this Action is containerized with Docker, [it can only run on Linux environme
 
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
-* Version : `uses: "Ilshidur/action-slack@2.0.2"` (&rarr; link to the releases list : https://github.com/Ilshidur/action-slack/releases)
-* Commit SHA-1 : `uses: "Ilshidur/action-slack@fb92a78"` (&rarr; link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
+* Version : `uses: "Ilshidur/action-slack@2.1.0"` (&rarr; link to the releases list : https://github.com/Ilshidur/action-slack/releases)
+* Commit SHA-1 : `uses: "Ilshidur/action-slack@689ad44"` (&rarr; link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
 
 ### Arguments
 
