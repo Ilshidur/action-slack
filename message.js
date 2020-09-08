@@ -1,8 +1,8 @@
-/*
+/**
   @description
   Message payload to be sent with Slack webhook
 */
-const { selectAvatar, getMessage, parsePayload } = require("./handlers.js");
+const { selectAvatar, getMessage, parsePayload } = require("./handlers");
 
 const {
   SLACK_USERNAME,

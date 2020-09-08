@@ -3,9 +3,14 @@
   "version": "2.0.0",
   "description": "GitHub Action that sends a Slack notification.",
   "private": true,
+  "type": "commonjs",
   "main": "./entrypoint.js",
+  "engines": {
+    "node": ">=8.3.0"
+  },
   "scripts": {
-    "start": "node -r dotenv/config ./entrypoint \"{{ EVENT_PAYLOAD.commits[0].message }}\"",
+    "build": "ncc build ./entrypoint -m",
+    "start": "node -r dotenv/config ./entrypoint 'My message from {{GITHUB_REPOSITORY}}'",
     "lint": "eslint --ext .js ./"
   },
   "repository": {
@@ -24,12 +29,14 @@
   },
   "homepage": "https://github.com/Ilshidur/actions#readme",
   "dependencies": {
+    "@actions/core": "1.2.4",
     "axios": "0.20.0",
-    "lodash": "4.17.20",
-    "yargs": "15.4.1"
+    "lodash": "4.17.20"
   },
   "devDependencies": {
+    "@vercel/ncc": "0.23.0",
     "dotenv": "8.2.0",
-    "eslint": "6.8.0"
+    "eslint": "7.7.0",
+    "eslint-plugin-node": "11.1.0"
   }
 }

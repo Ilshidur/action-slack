@@ -4,40 +4,34 @@ on:
   push:
     branches:
     - master
+    - main # ✊🏿
+
+env:
+  CI: true
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  HUSKY_SKIP_INSTALL: true
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
+    - name: Check syntax
+      run: |
+        yarn install --frozen-lockfile --silent --non-interactive
+        yarn lint
 
-      - name: Check syntax
-        run: |
-          yarn install
-          yarn lint
+    - name: Slack notification FAILED
+      uses: Ilshidur/action-slack@v2
+      if: failure()
+      env:
+        SLACK_AVATAR: sender # optional: repository, sender or ImageURL
+      with:
+        args: "Lint checks *FAILED* for {{GITHUB_REPOSITORY}}*\nYo {{GITHUB_ACTOR}} see why at <{{GITHUB_SERVER_URL}}/{{GITHUB_REPOSITORY}}/commit/{{GITHUB_SHA}}/checks|action logs>"
 
-      - name: Slack notification FAILED
-        uses: Ilshidur/action-slack@master
-        if: failure()
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_AVATAR: sender # optional: repository, sender or ImageURL
-        with:
-          args: "Lint checks *FAILED* \nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
-
-      - name: Slack notification SUCCESS
-        uses: Ilshidur/action-slack@master
-        if: success()
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-        with:
-          args: "Lint checks *SUCCESSFUL!* \nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
+    - name: Slack notification SUCCESS
+      uses: Ilshidur/action-slack@v2
+      if: success()
+      with:
+        args: "Lint checks *SUCCESSFUL!*\nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
