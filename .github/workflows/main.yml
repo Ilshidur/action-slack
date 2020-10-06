@@ -9,6 +9,7 @@ on:
 env:
   CI: true
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
   HUSKY_SKIP_INSTALL: true
 
 jobs:
@@ -32,6 +33,18 @@ jobs:
 
     - name: Slack notification SUCCESS
       uses: Ilshidur/action-slack@2.1.0
+      if: success()
+      with:
+        args: "Lint checks *SUCCESSFUL!*\nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
+
+    - name: Discord notification FAILED
+      uses: Ilshidur/action-discord@0.3.0
+      if: failure()
+      with:
+        args: "Lint checks *FAILED* for {{GITHUB_REPOSITORY}}*\nYo {{GITHUB_ACTOR}} see why at <{{GITHUB_SERVER_URL}}/{{GITHUB_REPOSITORY}}/commit/{{GITHUB_SHA}}/checks|action logs>"
+
+    - name: Discord notification SUCCESS
+      uses: Ilshidur/action-discord@0.3.0
       if: success()
       with:
         args: "Lint checks *SUCCESSFUL!*\nfrom {{ GITHUB_ACTOR }} at {{ GITHUB_REPOSITORY }}"
