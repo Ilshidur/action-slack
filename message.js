@@ -2,7 +2,7 @@
   @description
   Message payload to be sent with Slack webhook
 */
-const { selectAvatar, getMessage, parsePayload } = require("./handlers");
+const { selectAvatar, emoji, getMessage, parsePayload } = require("./handlers");
 
 const {
   SLACK_USERNAME,
@@ -32,6 +32,12 @@ const messageSingleton = (() => {
       defaults to webhook slack app;
     */
     if (selectAvatar()) message.icon_url = selectAvatar();
+
+    /*
+      If provided emoji add it,
+      defaults to null;
+    */
+    if (emoji()) message.icon_emoji = emoji();
 
     return message;
   }

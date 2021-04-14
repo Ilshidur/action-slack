@@ -6,6 +6,7 @@ _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
 const {
   SLACK_AVATAR,
+  SLACK_EMOJI,
   SLACK_CUSTOM_PAYLOAD,
   GITHUB_EVENT_PATH,
   GITHUB_ACTOR,
@@ -39,4 +40,8 @@ exports.selectAvatar = () => {
     case 'repository': return _.get(EVENT_PAYLOAD, 'owner.avatar_url') || false
     default: return SLACK_AVATAR || false;
   }
+};
+
+exports.emoji = () => {
+  return SLACK_EMOJI ? `:${SLACK_EMOJI}:` : null
 };
