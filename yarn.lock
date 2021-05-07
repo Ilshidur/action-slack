@@ -43,10 +43,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@vercel/ncc@0.28.2":
-  version "0.28.2"
-  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.28.2.tgz#cf0c4f7e4c980bc849eaf115851f2440cd62c8a5"
-  integrity sha512-2ZBPviK9nFHzymu9POKGz50BRGGBIw7a8VcjgH73Xu2H4IvZx3KS0Qk/SS7S/N6iAalAGGxLSwFM1obeBGWXGg==
+"@vercel/ncc@0.28.5":
+  version "0.28.5"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.28.5.tgz#6d735379f81b70b708a9c3d2196507b2a841824f"
+  integrity sha512-ZSwD4EDCon2EsnPZ2/Qcigx4N2DiuBLV/rDnF04giEPFuDeBeUDdnSTyYYfX8KNic/prrJuS1vUEmAOHmj+fRg==
 
 acorn-jsx@^5.3.1:
   version "5.3.1"
