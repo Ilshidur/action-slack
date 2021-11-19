@@ -33,7 +33,7 @@ This GitHub action is part of a list of Actions that are located in an other rep
 **NOTICE :** for stability purposes, it is recommended to use the action with an explicit commit SHA-1 :
 
 * Version : `uses: "Ilshidur/action-slack@2.1.0"` (&rarr; link to the releases list : https://github.com/Ilshidur/action-slack/releases)
-* Commit SHA-1 : `uses: "Ilshidur/action-slack@689ad44"` (&rarr; link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
+* Commit SHA-1 : `uses: "Ilshidur/action-slack@702accad29cfcfe2ee4ebebb21a3883cc1ac9a39"` (&rarr; link to the commits list : https://github.com/Ilshidur/action-slack/commits/master)
 
 ### Arguments
 
