@@ -34,7 +34,7 @@
     "lodash": "4.17.21"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.28.2",
+    "@vercel/ncc": "0.33.3",
     "dotenv": "8.2.0",
     "eslint": "7.24.0",
     "eslint-plugin-node": "11.1.0"
