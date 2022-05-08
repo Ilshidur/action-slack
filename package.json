@@ -36,7 +36,7 @@
   "devDependencies": {
     "@vercel/ncc": "0.28.2",
     "dotenv": "8.2.0",
-    "eslint": "7.24.0",
+    "eslint": "8.15.0",
     "eslint-plugin-node": "11.1.0"
   }
 }
