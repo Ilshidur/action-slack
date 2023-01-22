@@ -12,7 +12,7 @@ inputs:
   # slack_username:
   # slack_channel:
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
 branding:
   icon: hash
