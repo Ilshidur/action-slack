@@ -5,6 +5,8 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Build Status][build-badge]][build-url]
+![stability-frozen](https://img.shields.io/badge/stability-locked-blue.svg)
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Sends a Slack notification. Simple as that.
 
@@ -15,6 +17,11 @@ Sends a Slack notification. Simple as that.
 This GitHub action is part of a list of Actions that are located in an other repo. Feel free to check it out : https://github.com/Ilshidur/actions.
 
 <hr/>
+
+## DEPRECATION NOTICE
+
+**Please refer to the following discussion :
+https://github.com/Ilshidur/action-slack/discussions/255**
 
 ## Usage
 
