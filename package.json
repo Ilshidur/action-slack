@@ -1,6 +1,6 @@
 {
   "name": "action-slack",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "GitHub Action that sends a Slack notification.",
   "private": true,
   "type": "commonjs",
@@ -29,14 +29,14 @@
   },
   "homepage": "https://github.com/Ilshidur/actions#readme",
   "dependencies": {
-    "@actions/core": "1.2.7",
-    "axios": "0.21.0",
+    "@actions/core": "1.10.0",
+    "axios": "1.2.3",
     "lodash": "4.17.21"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.28.2",
-    "dotenv": "8.2.0",
-    "eslint": "7.24.0",
+    "@vercel/ncc": "0.36.0",
+    "dotenv": "16.0.3",
+    "eslint": "8.32.0",
     "eslint-plugin-node": "11.1.0"
   }
 }
