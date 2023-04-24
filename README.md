@@ -32,6 +32,7 @@ https://github.com/Ilshidur/action-slack/discussions/255**
     SLACK_USERNAME: ThisIsMyUsername # Optional. (defaults to webhook app)
     SLACK_CHANNEL: general # Optional. (defaults to webhook)
     SLACK_AVATAR: repository # Optional. can be (repository, sender, an URL) (defaults to webhook app avatar)
+    SLACK_EMOJI: octocat # Optional. (defaults to null)
   uses: Ilshidur/action-slack@2.0.2
   with:
     args: 'A new commit has been pushed.' # Optional
@@ -69,6 +70,7 @@ e.g.: `Action called: {{ GITHUB_ACTION }} as {{ EVENT_PAYLOAD.pull_request.id }}
 * **`SLACK_USERNAME`** *(optional)* : overrides username. Defaults to the Slack webhook bot name.
 * **`SLACK_CHANNEL`** *(optional)* : overrides the default channel of the webhook. If not set, the message will be sent to the channel associated to the webhook.
 * **`SLACK_AVATAR`** *(optional)* : overrides the message avatar. Can be `'repository'`, `'sender'` or an URL. If not set, the avatar of the Slack webhook's bot picture will be used.
+* **`SLACK_EMOJI`** *(optional)* : overrides the message avatar. If not set, the avatar of the Slack webhook's bot picture will be used.
 * **`SLACK_CUSTOM_PAYLOAD`** *(advanced)* : JSON string that sets full payload. instructions see [CUSTOM_PAYLOAD](CUSTOM_PAYLOAD.md)
 
 ## Debugging / testing / development
